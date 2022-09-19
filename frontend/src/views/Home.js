@@ -15,10 +15,6 @@ const Home = () => {
           Obras
         </Link>
         <br/>
-        <Link to={'/ListarVisitasGuiadas'}>
-          Visitas Guiadas
-        </Link>
-        <br/>
         <Link to={'/CrearVisitaGuiada'}>
           Crear VisitaGuiada
         </Link>

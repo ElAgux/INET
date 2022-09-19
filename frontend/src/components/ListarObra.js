@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import { CSVLink} from "react-csv";
 import differenceBy from 'lodash/differenceBy';
-
+import { AddIcon } from "./add-outline";
+import { BackIcon } from "./back-svgrepo-com";
+import  './src/css/museo.css';
 const ListarObra = () => {
   const [obra, setObra] = useState([]);
   const [searchTerm, setSearch ] = useState("")
@@ -69,8 +71,40 @@ const searcher = (e) => {
 
   return (
 <body>
+<div className="globalheadbox">
+<Link to="/iJA8aiuhad8oiusa9uS0USD9u0d">
+<div className="backheadmainpressablebox">
+      
+      <div className="headpressablebox">
+              <div className="headbuttonpressablebox">
+              <BackIcon></BackIcon>
+              </div>
+            
+</div>
+
+</div>
+</Link>
+  <Link to="creararea">
+<div className="headmainpressablebox">
+      
+      <div className="headpressablebox">
+              <div className="headbuttonpressablebox">
+              <AddIcon></AddIcon>
+              </div>
+              <div className="headtitlepressablebox">
+              <h1>Crear Area</h1>
+              </div>
+              <div className="headtextpressablebox"> <p>Crear area nueva de exposicion</p>
+              </div>
+</div>
+
+
+</div>
+</Link>
+</div>
+
     <div>
-    <input type="text" name="searchTerm" id="searchTerm" onChange={searcher}></input>
+
     <Link to={`/CrearObra`} className="button is-success">
     Nuevo</Link>
     <CSVLink data={selectedData} onClick="" className="button is-success" filename={"VEC2_personas.csv"}>Exportar campos seleccionados CSV</CSVLink>

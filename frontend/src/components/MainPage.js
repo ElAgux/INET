@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, Transition } from 'react-transition-group'
 import  './src/css/museo.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -54,9 +54,11 @@ const MainPage = (args) => {
                 <NavLink href="/components/">Recorridos</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  Turnos
+                <Link to={'/login'}>
+                <NavLink>
+                  login
                 </NavLink>
+                </Link>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -70,13 +72,12 @@ const MainPage = (args) => {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-            <NavbarText>Simple Text</NavbarText>
           </Collapse>
         </Navbar>
       </div>
      {/*- <CSSTransition in={inProp} classNames="contentmainscreen">*/}
       <section className="mainscreen">
-        <div className="contentmainscreen">
+        <div className={isActive ? "contentmainscreen" : "hidden" }>
         <p className="textboxcontent">El Primer Museo Inteligente de Argentina.</p>
        
           <div className="buttonbox">
@@ -92,83 +93,82 @@ const MainPage = (args) => {
         </div>
      
         </section>
-<div className={isActive ? "hidden" : ""}>
-
-<CardGroup>
+<div className={isActive ? "hidden" : "cardsbox"}>
+<div className="card1">
     <Card>
       <CardImg
-        alt="Card image cap"
-        src="https://picsum.photos/318/180"
+      className="cardimg" 
+        alt="fachada del museo"
+        src="/imagenes/museo.jpg"
         top
-        width="100%"
+        
       />
       <CardBody>
-        <CardTitle tag="h5">
-          Visitas Guiadas
+        <CardTitle tag="h5" className="mb-5">
+          Sobre Nosotros
         </CardTitle>
         
-        <CardText>
-          Ver los turnos disponibles para visita guiada
+        <CardText className="mb-5">
+          Toda la informacion sobre el primer museo inteligente de Argentina
         </CardText>
-        <br/>
-        <br/>
-        <br/>
+        <Link to={'/Areas'}>
         <Button block>
-          Button
+          Ver
         </Button>
+        </Link>
       </CardBody>
     </Card>
+    </div>
+    <div className="card2">
+    <Card>
+      <CardImg  
+        alt="Card image cap"
+        src="/imagenes/visita.jpg"
+        top
+        className="cardimg"
+      />
+      <CardBody>
+        <CardTitle tag="h5" className="mb-5">
+          Visitas Guiadas
+        </CardTitle>
+      
+        <CardText className="mb-5">
+          Acerca de nuestras visitas guiadas por el museo
+        </CardText>
+        <Link to={'/seleccionarVisitaGuiada'}>
+        <Button block>
+          Ver
+        </Button>
+        </Link>
+      </CardBody>
+    </Card>
+    </div>
+    <div className="card3">
     <Card>
       <CardImg
         alt="Card image cap"
-        src="https://picsum.photos/318/180"
+        src="/imagenes/areas.jpg"
         top
-        width="100%"
+        
+        className="cardimg"
       />
       <CardBody>
-        <CardTitle tag="h5">
-          Card title
-        </CardTitle>
-        <CardSubtitle
-          className="mb-2 text-muted"
-          tag="h6"
+        <CardTitle tag="h5" className="mb-5"
         >
-          Card subtitle
-        </CardSubtitle>
-        <CardText>
-          This card has supporting text below as a natural lead-in to additional content.
+          Areas en Exposicion
+        </CardTitle>
+        
+        <CardText className="mb-5">
+        Ver las areas de exposicion en el museo
         </CardText>
+        <Link to={'/listararea'}>
         <Button block>
-          Button
+        Ver
         </Button>
+        </Link>
       </CardBody>
     </Card>
-    <Card>
-      <CardImg
-        alt="Card image cap"
-        src="https://picsum.photos/318/180"
-        top
-        width="100%"
-      />
-      <CardBody>
-        <CardTitle tag="h5">
-          Card title
-        </CardTitle>
-        <CardSubtitle
-          className="mb-2 text-muted"
-          tag="h6"
-        >
-          Card subtitle
-        </CardSubtitle>
-        <CardText>
-          This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-        </CardText>
-        <Button block>
-          Areas
-        </Button>
-      </CardBody>
-    </Card>
-  </CardGroup>
+    </div>
     
   </div> 
    </body>

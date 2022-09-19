@@ -34,8 +34,7 @@ import {
 import{
     crearVisitaGuiada,
     getVisitasGuiadas,
-    getVisitasGuiadasPorIdioma,
-    getIdVisitasGuiadas
+    getVisitasGuiadasPorIdioma
 } from "../controllers/visitasGuiadasController.js"
 
 import{
@@ -50,6 +49,8 @@ import{
     crearVisitante
 }from "../controllers/visitanteController.js"
 
+import { LoginCon } from "../controllers/LoginControllers.js";
+import { LoginYreg } from "../controllers/RegisterController.js";
 const router = express.Router();
 
 //get
@@ -64,7 +65,6 @@ router.get('/tiposAreas', getTiposAreas);
 router.get('/idiomas', getIdiomas);
 router.get('/visitasGuiadas', getVisitasGuiadas);
 router.get('/VisitasGuiadasPorIdioma/:IdIdioma', getVisitasGuiadasPorIdioma);
-router.get('/IdVisitaGuiada', getIdVisitasGuiadas);
 
 
 //post
@@ -75,6 +75,8 @@ router.post('/tiposAreas', crearTipoArea)
 router.post('/visitasGuiadas', crearVisitaGuiada)
 router.post('/idiomasPorVisitasGuiadas', crearIdiomaPorVisitaGuiada)
 router.post('/visitante', crearVisitante)
+router.post('/Register', LoginYreg);
+router.post('/login', LoginCon);
 
 
 

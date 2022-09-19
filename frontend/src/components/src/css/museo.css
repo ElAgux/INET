@@ -5,34 +5,120 @@
     font-weight: normal;
 }
 
-.hidden{
-    display: none;
+.logintitle{
+    font-size: 40px;
 }
+.hidden{
 
+    display: none;
+    transition: all 2s linear;
+}
+.justbuttonbox{
+    margin-bottom: 5%;
+}
+.buttonlogbox{
+margin-left: 25%;
+width:50%;
+
+}
+.mainadminbody{
+    position: absolute;
+    transition: all 2s linear;
+    align-items: center;
+    height: 100%;
+    max-height:100%;
+    width: 100%;
+    background-color: white;
+    background-size: cover;
+    opacity: 100%;
+  
+    
+}
+.buttonadd{
+    width: 200px;
+}
 .mainbody{
-
-    height: 1000px;
-    max-height:100% ;
+    position: absolute;
+    transition: all 2s linear;
+    align-items: center;
+    height: 100%;
+    max-height:100%;
+    width: 100%;
     background-image: url('./fosiles.jpg');
     background-size: cover;
     opacity: 100%;
   
     
 }
-.card1{
-    margin-left:10% ;
-}
-.card-group{
-    padding-left: 20%;
-    transition: all 3s;
-    width: 80%;
-}
-
-.mainscreen{
-
+.cardsbox{
+   
+    height: 450px;
     transition: all 2s linear;
     display: block;
+    padding-top: 10%;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 13%;
+    text-align: center;
 }
+.logintitle{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.inputbox{
+    margin-top: 5%;
+   margin-left: 5%;
+    width: 90%;
+    margin-bottom: 5%;
+}
+.loginbox{
+    background-color: white;
+    height: auto;
+}
+
+.login{
+   
+    position: absolute  ;
+    margin-top: 10%;
+    margin-left: 10%;
+    text-align:center ;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    width: 80%;
+ 
+}
+.cardbody{
+    background: grey;
+    transition: all 2s linear;
+}
+    .cardimg{
+    width: 300px;
+    height: 200px;
+    transition: all 2s linear;
+}
+.card1 {
+    margin-left: 5%;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    float: right;
+    transition: all 2s linear;
+}
+.card2{
+    margin-left: 5%;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    float: right;
+}
+.card3{
+    margin-left: 5%;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    float: right;
+}
+
 
 .contentmainscreen{ 
     transition: all 2s linear;
@@ -43,6 +129,7 @@ padding-top: 15%;
     text-align: center;
 }
 .textboxcontent{
+    transition: all 2s linear;
 margin-bottom: 50px;
 font-style:normal;
 font-family: Cocogoose;
@@ -51,7 +138,87 @@ color: rgb(255, 255, 255);
 
    
 }
+.adminmainscreen{
+        text-align: center;
+        transition: all 2s linear;
+        display: block;
+        
+        
+    }
 .buttonbox{
+    transition: all 2s linear;
     width: 30%;
     align-self: center;
+}
+.headmainpressablebox{
+    
+    width: 80%;
+    margin-left: 20%;
+    
+    
+}
+.backheadmainpressablebox{
+    position: absolute;
+    width: 20%;
+    float: left;
+ 
+}
+.headpressablebox{
+   
+    margin: 0px auto;
+    width: 100%;
+}
+.headbuttonpressablebox{
+    float: left;
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    border-left: 3px solid black;
+}
+.headtitlepressablebox{
+padding-top: 2%;
+text-align: left;
+font-size: 150%;
+}
+.headtextpressablebox{
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
+    text-align: left;
+    margin-bottom: 2%;
+}
+
+.mainpressablebox{
+    border: 3px solid black;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.pressablebox{
+   
+    margin: 0px auto;
+    width: 100%;
+}
+.buttonpressablebox{
+    float: left;
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+}
+.titlepressablebox{
+padding-top: 2%;
+text-align: left;
+font-size: 150%;
+}
+.textpressablebox{
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
+    text-align: left;
+    margin-bottom: 2%;
+}
+.globalheadbox{
+    border: 3px solid black;
+    height: auto;
+    width: auto;
 }

@@ -1,43 +1,13 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  CardGroup,
-  Button,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from 'reactstrap';
-
+ 
 const CrearVisitaGuiada = () => {
   const [Nombre, setNombre] = useState("");
   const [FechaYHora, setFechaYHora] = useState("");
   const [IdIdioma, setIdIdioma] = useState("");
   const [IdVisitaGuiada, setIdVisitaGuiada] = useState("");
   const [Idiomas, setIdiomas] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
-  const [inProp, setInProp] = useState(false);
-  const [isActive, setActive] = useState("false");
-  const ToggleClass = () => {
-      setActive(!isActive); 
-     };
-      const toggle = () => setIsOpen(!isOpen); 
   const navigate = useNavigate();
 
   useEffect(() => {

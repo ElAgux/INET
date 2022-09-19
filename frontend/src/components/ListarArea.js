@@ -3,12 +3,44 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import { CSVLink} from "react-csv";
+import { AddIcon } from "./add-outline";
+import  './src/css/museo.css';
+import { BackIcon } from "./back-svgrepo-com";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  CardGroup,
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from 'reactstrap';
 
-const ListarArea = () => {
+const ListarArea = (args) => {
   const [area, setArea] = useState([]);
   const [searchTerm, setSearch ] = useState("")
   const [selectedData, setSelectedData] = useState([]);
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const [inProp, setInProp] = useState(false);
+  const [isActive, setActive] = useState("false");
+  const ToggleClass = () => {
+      setActive(!isActive); 
+     };
+      const toggle = () => setIsOpen(!isOpen); 
 
   useEffect(() => {
     getArea();
@@ -70,11 +102,75 @@ const searcher = (e) => {
 
   return (
 <body>
+<div>
+  <Navbar {...args}
+          className="my-0"
+          color="dark"
+          dark>
+            
+          <NavbarBrand href="/">Museo Inteligente</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="me-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Recorridos</NavLink>
+              </NavItem>
+              <NavItem>
+                <Link to={'/login'}>
+                <NavLink>
+                  login
+                </NavLink>
+                </Link>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+                </DropdownToggle>
+             <DropdownMenu right>
+                  <DropdownItem>Option 1</DropdownItem>
+                  <DropdownItem>Option 2</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+          </Collapse>
+        </Navbar>
+        </div>
+  <div className="globalheadbox">
+<Link to="/iJA8aiuhad8oiusa9uS0USD9u0d">
+<div className="backheadmainpressablebox">
+      
+      <div className="headpressablebox">
+              <div className="headbuttonpressablebox">
+              <BackIcon></BackIcon>
+              </div>
+            
+</div>
+
+</div>
+</Link>
+  <Link to="creararea">
+<div className="headmainpressablebox">
+      
+      <div className="headpressablebox">
+              <div className="headbuttonpressablebox">
+              <AddIcon></AddIcon>
+              </div>
+              <div className="headtitlepressablebox">
+              <h1>Crear Area</h1>
+              </div>
+              <div className="headtextpressablebox"> <p>Crear area nueva de exposicion</p>
+              </div>
+</div>
+
+
+</div>
+</Link>
+</div>
     <div>
-    <input type="text" name="searchTerm" id="searchTerm" onChange={searcher}></input>
-    <Link to={`/CrearArea`} className="button is-success">
-    Nuevo</Link>
-    <CSVLink data={selectedData} onClick="" className="button is-success" filename={"Museo.csv"}>Exportar campos seleccionados CSV</CSVLink>
+ 
+  
       <DataTable
       pagination
       selectableRows
