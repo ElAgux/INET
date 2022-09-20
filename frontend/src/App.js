@@ -3,6 +3,7 @@ import ListarArea from "./components/ListarArea";
 import CrearArea from "./components/CrearArea";
 import EditarArea from "./components/EditarArea";
 import ListarObra from "./components/ListarObra";
+import ListarVisitasGuiadas from "./components/ListarVisitasGuiadas";
 import CrearObra from "./components/CrearObra";
 import EditarObra from "./components/EditarObra";
 import CrearVisitaGuiada from "./components/CrearVisitaGuiada";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<MainPage/>}/>  
         <Route path="iJA8aiuhad8oiusa9uS0USD9u0d" element={<MainAdmin/>}/>
         <Route path="listarArea" element={<ListarArea/>}/>
+        <Route path="listarVisitasGuiadas" element={<ListarVisitasGuiadas/>}/>
         <Route path="listarObras" element={<ListarObra/>}/>
         <Route path="login" element= {<Login/>}/>
         <Route path="register" element={<Register/>}/>

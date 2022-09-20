@@ -135,7 +135,7 @@ const CrearVisitaGuiada = () => {
               Save
             </button>
             <Link
-                    to={'/'}
+                    to={'/listarVisitaGuiada'}
                     className="button is-small is-info mr-2"
                   >
                     Back

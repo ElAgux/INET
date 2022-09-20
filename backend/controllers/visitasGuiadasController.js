@@ -2,7 +2,7 @@ import conexion from "../config/Database.js";
 
 export const getVisitasGuiadas = async(req,res)=>{
     try {
-        const [response]= await conexion.query("SELECT VG.IdVisitaGuiada, VG.Nombre, VG.FechaYHora, I.Nombre as NombreIdioma FROM VisitasGuiadas VG LEFT OUTER JOIN Idiomasporvisitasguiadas IPVG ON IPVG.IdVisitaGuiada = VG.IdVisitaGuiada LEFT OUTER JOIN idiomas I ON IPVG.IdIdioma = I.IdIdioma");
+        const [response]= await conexion.query("SELECT VG.IdVisitaGuiada, VG.Nombre, VG.FechaYHora, I.Nombre as NombreIdioma FROM visitasguiadas VG LEFT OUTER JOIN idiomasporvisitasguiadas IPVG ON IPVG.IdVisitaGuiada = VG.IdVisitaGuiada LEFT OUTER JOIN idiomas I ON IPVG.IdIdioma = I.IdIdioma");
         res.status(200).json(response);
         console.log(JSON.stringify(response, null,1))
     } catch (error) {
@@ -25,7 +25,7 @@ export const getIdVisitasGuiadas = async(req,res)=>{
 
 export const getVisitasGuiadasPorIdioma = async(req, res) =>{
     try  {
-        const [response] = await conexion.query("SELECT VG.IdVisitaGuiada, VG.Nombre, VG.FechaYHora FROM VisitasGuiadas VG LEFT OUTER JOIN Idiomasporvisitasguiadas IPVG ON IPVG.IdVisitaGuiada = VG.IdVisitaGuiada WHERE IPVG.IdIdioma = (?)",
+        const [response] = await conexion.query("SELECT VG.IdVisitaGuiada, VG.Nombre, VG.FechaYHora FROM visitasguiadas VG LEFT OUTER JOIN idiomasporvisitasguiadas IPVG ON IPVG.IdVisitaGuiada = VG.IdVisitaGuiada WHERE IPVG.IdIdioma = (?)",
         {
             replacements: [req.params.IdIdioma],
         });
@@ -38,7 +38,7 @@ export const getVisitasGuiadasPorIdioma = async(req, res) =>{
 
 export const crearVisitaGuiada = async(req, res) =>{
     try {
-        await conexion.query("INSERT INTO `VisitasGuiadas` (Nombre, FechaYHora) VALUES (?,?)",
+        await conexion.query("INSERT INTO `visitasguiadas` (Nombre, FechaYHora) VALUES (?,?)",
         {
            replacements: [[req.body.Nombre], [req.body.FechaYHora]],
         });

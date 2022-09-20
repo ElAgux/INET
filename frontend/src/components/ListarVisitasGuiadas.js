@@ -3,12 +3,42 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import { CSVLink} from "react-csv";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  CardGroup,
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from 'reactstrap';
+
 
 const ListarArea = () => {
   const [visitasGuiadas, setVisitasGuiadas] = useState([]);
   const [searchTerm, setSearch ] = useState("")
   const [selectedData, setSelectedData] = useState([]);
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const [inProp, setInProp] = useState(false);
+  const [isActive, setActive] = useState("false");
+  const ToggleClass = () => {
+      setActive(!isActive); 
+     };
+      const toggle = () => setIsOpen(!isOpen); 
 
   useEffect(() => {
     getVisitasGuiadas();
@@ -64,7 +94,7 @@ const searcher = (e) => {
 <body>
     <div>
     <input type="text" name="searchTerm" id="searchTerm" onChange={searcher}></input>
-    <Link to={`/CrearArea`} className="button is-success">
+    <Link to={`/CrearVisitaGuiada`} className="button is-success">
     Nuevo</Link>
     <CSVLink data={selectedData} onClick="" className="button is-success" filename={"Museo.csv"}>Exportar campos seleccionados CSV</CSVLink>
       <DataTable

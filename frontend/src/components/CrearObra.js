@@ -1,7 +1,30 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
- 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  CardGroup,
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from 'reactstrap';
+
 const CrearObra = () => {
   const [Autor, setAutor] = useState("");
   const [Descripcion, setDescripcion] = useState("");
@@ -9,6 +32,13 @@ const CrearObra = () => {
   const [IdTipoObra, setIdTipoObra] = useState("");
   const [IdArea, setIdArea] = useState("");
   const [TiposObras, setTiposObras] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [inProp, setInProp] = useState(false);
+  const [isActive, setActive] = useState("false");
+  const ToggleClass = () => {
+      setActive(!isActive); 
+     };
+      const toggle = () => setIsOpen(!isOpen); 
   const navigate = useNavigate();
 
   useEffect(() => {

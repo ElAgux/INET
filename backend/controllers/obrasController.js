@@ -38,7 +38,7 @@ export const editarObra = async(req, res) =>{
 
 export const crearObra = async(req, res) =>{
     try {
-        await conexion.query("INSERT INTO `persona` (Autor, Descripcion, Nombre, IdTipoObra, IdArea) VALUES (?,?,?,?,?)",
+        await conexion.query("INSERT INTO `obras` (Autor, Descripcion, Nombre, IdTipoObra, IdArea) VALUES (?,?,?,?,?)",
         {
            replacements: [[req.body.Autor], [req.body.Descripcion], [req.body.Nombre], [req.body.IdTipoObra], [req.body.IdArea], [req.params.IdObra]],
         });

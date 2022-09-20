@@ -6,12 +6,42 @@ import { CSVLink} from "react-csv";
 import differenceBy from 'lodash/differenceBy';
 import { AddIcon } from "./add-outline";
 import { BackIcon } from "./back-svgrepo-com";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  CardGroup,
+  Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from 'reactstrap';
+
 import  './src/css/museo.css';
 const ListarObra = () => {
   const [obra, setObra] = useState([]);
   const [searchTerm, setSearch ] = useState("")
   const [selectedData, setSelectedData] = useState([]);
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const [inProp, setInProp] = useState(false);
+  const [isActive, setActive] = useState("false");
+  const ToggleClass = () => {
+      setActive(!isActive); 
+     };
+      const toggle = () => setIsOpen(!isOpen); 
 
   useEffect(() => {
     getObras();

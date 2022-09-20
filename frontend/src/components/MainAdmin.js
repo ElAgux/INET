@@ -128,7 +128,7 @@ import  './src/css/museo.css';const MainAdmin = (args) => {
 </Link>
 
 
-<Link to={'/'}>
+<Link to={'/listarVisitasGuiadas'}>
         <div className="mainpressablebox">
       
       <div className="pressablebox">
