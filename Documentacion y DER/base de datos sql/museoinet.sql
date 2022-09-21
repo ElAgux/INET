@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2022 a las 16:56:43
+-- Tiempo de generación: 21-09-2022 a las 22:15:49
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.31
 
@@ -85,12 +85,8 @@ CREATE TABLE `idiomasporvisitasguiadas` (
 --
 
 INSERT INTO `idiomasporvisitasguiadas` (`IdIdiomaPorVisitaGuiada`, `IdIdioma`, `IdVisitaGuiada`) VALUES
-(1, 2, 0),
-(2, 0, 0),
-(3, 4, 0),
-(4, 1, 4),
-(5, 1, 5),
-(6, 2, 6);
+(1, 4, 0),
+(2, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -176,6 +172,26 @@ INSERT INTO `tiposobras` (`IdTipoObra`, `Nombre`, `Descripcion`, `Estado`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `IdUsuario` int(11) NOT NULL,
+  `NombreUsuario` varchar(50) NOT NULL,
+  `PassUsuario` varchar(50) NOT NULL,
+  `Estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`IdUsuario`, `NombreUsuario`, `PassUsuario`, `Estado`) VALUES
+(1, 'admin', 'admin', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `visitantes`
 --
 
@@ -214,12 +230,8 @@ CREATE TABLE `visitasguiadas` (
 --
 
 INSERT INTO `visitasguiadas` (`IdVisitaGuiada`, `Nombre`, `FechaYHora`, `IdMuseo`) VALUES
-(1, 'visita 1', '0000-00-00 00:00:00', 0),
-(2, 'Visita Guerra', '0000-00-00 00:00:00', 0),
-(3, 'hola', '2022-09-29 14:55:00', 0),
-(4, 'ejemplo1', '2022-09-15 23:31:52', 0),
-(5, 'ejemplo2', '2022-09-13 23:17:46', 0),
-(6, 'ejemplo3', '2022-09-21 23:24:04', 0);
+(1, 'visita1', '2022-09-21 12:20:00', 1),
+(2, 'visita2', '2022-09-23 12:20:00', 1);
 
 --
 -- Índices para tablas volcadas
@@ -268,6 +280,12 @@ ALTER TABLE `tiposobras`
   ADD PRIMARY KEY (`IdTipoObra`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`IdUsuario`);
+
+--
 -- Indices de la tabla `visitantes`
 --
 ALTER TABLE `visitantes`
@@ -299,7 +317,7 @@ ALTER TABLE `idiomas`
 -- AUTO_INCREMENT de la tabla `idiomasporvisitasguiadas`
 --
 ALTER TABLE `idiomasporvisitasguiadas`
-  MODIFY `IdIdiomaPorVisitaGuiada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdIdiomaPorVisitaGuiada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `museos`
@@ -326,6 +344,12 @@ ALTER TABLE `tiposobras`
   MODIFY `IdTipoObra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `visitantes`
 --
 ALTER TABLE `visitantes`
@@ -335,7 +359,7 @@ ALTER TABLE `visitantes`
 -- AUTO_INCREMENT de la tabla `visitasguiadas`
 --
 ALTER TABLE `visitasguiadas`
-  MODIFY `IdVisitaGuiada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdVisitaGuiada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
